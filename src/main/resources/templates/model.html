@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{webjars/jquery/3.2.1/jquery.js}"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+		$.getJSON("produceuser", function(result) {
+			console.info(result);
+			alert(result.length);
+			var tr = "<table>";
+		 	for(var i = 0;i < result.length;i++){
+				tr += "<tr>";
+				tr += "<td>" + result[i].name + "</td>";
+				tr += "<td>" + result[i].age + "</td>";
+				tr += "</tr>";
+			}
+			tr += "</table>";
+			$("div").html(tr);
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<div></div>
+    <p th:text="${user}"></p>
+	<p th:text="${msg}"></p>
+	<p th:text="${msgforword}"></p>
+</body>
+</html>
