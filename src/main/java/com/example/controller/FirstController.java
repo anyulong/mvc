@@ -21,7 +21,7 @@ import com.example.pojo.User;
 @Controller
 public class FirstController {
 	
-	@RequestMapping("/index")
+	/*@RequestMapping("/index")
 	public String firstMethod() {
 		
 		return "index";
@@ -81,7 +81,7 @@ public class FirstController {
 	public User jsonTest(User user) {
 		System.out.println(user);
 		return user;
-	}
+	}*/
 	@RequestMapping("/produceuser")
 	@ResponseBody
 	public List<User> produceUse() {
@@ -93,6 +93,7 @@ public class FirstController {
 		user.setAge(18);
 		users.add(user);
 		}
+		//model.addAttribute("users",users);
 		return users;
 	}
 	
