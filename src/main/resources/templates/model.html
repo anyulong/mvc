@@ -21,11 +21,26 @@
     </table> 
 </script>
 <script type="text/javascript">
-$(function() {
+/* $(function() {
 	$.getJSON("produceuser", function(users) {
 		alert(users.length)
 		$("div").html($("#thy").html());
 	});
+}); */
+$(function() {
+			$.getJSON("produceuser", function(result) {
+				console.info(result);
+				alert(result.length);
+				var tr = "<table>";
+			 	for(var i in result){
+					tr += "<tr>";
+					tr += "<td>" + result[i].name + "</td>";
+					tr += "<td>" + result[i].age + "</td>";
+					tr += "</tr>";
+				}
+				tr += "</table>";
+				$("div").html(tr);
+			});
 });
 </script>
 </head>
